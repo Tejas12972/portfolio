@@ -13,7 +13,7 @@ export function SiteHeader() {
         <a
           href="#intro"
           className="mr-auto flex items-center gap-2 rounded-md"
-          aria-label={`${site.shortName}, back to top`}
+          aria-label={`KB, ${site.shortName}, back to top`}
         >
           <Monogram className="size-8" />
           <span className="hidden text-sm font-semibold sm:inline">{site.shortName}</span>
