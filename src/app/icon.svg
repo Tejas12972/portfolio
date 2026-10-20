@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <rect width="40" height="40" rx="9" fill="#09090b"/>
+  <path d="M6 31 H12 V27 H18 V31 H24 V27 H34" fill="none" stroke="#4ade80" stroke-width="1.9" stroke-linejoin="round"/>
+  <text x="20" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#fafafa" font-family="ui-monospace, Menlo, monospace">KB</text>
+</svg>

@@ -1,0 +1,21 @@
+# Karthik (Tejas) Basavarajappa
+
+> Computer Engineering and Computer Science student at Northeastern University (B.S. expected May 2029), based in Boston, MA. Leans toward embedded and hardware work. Open to a co-op January–August 2027.
+
+Contact: basavarajappa.k [at] northeastern [dot] edu · https://www.linkedin.com/in/tejasb12 · https://github.com/Tejas12972
+
+## Projects
+
+- [Phone Box](https://github.com/emah-maker/lockbox): co-developed phone lockbox. ESP32-S3 on CircuitPython, servo latch, touchscreen countdown, a modified MAX17043 fuel gauge sharing the touch controller's I²C bus, a custom BLE GATT service (8 characteristics) to a React Native iOS app with Firebase. Servo brownouts traced on the bench and fixed with battery-rail power, bulk capacitance, and brownout recovery. Claude Code wrote most of the code; the CAD, the fuel-gauge mod, and the bench debugging were done by hand.
+- ShoreClear: first-year team robot that picks plastic out of beach sand. Drive electronics and firmware (ESP32, four motors on two dual motor drivers) and the arm weight iterations.
+- [Lumen](https://github.com/emah-maker/lumen): co-built Chromium/Electron browser with a sidebar AI agent; doubles as an MCP server with 44 tools over an HMAC-authenticated local channel.
+- [Options Analytics](https://github.com/Tejas12972/OptionsAnalytics): Black-Scholes-Merton pricer, Newton-Raphson IV solver, self-built IV history. Python/FastAPI, Next.js.
+- [ELISA Analysis Pipeline](https://github.com/Tejas12972/elisa-analysis-pipeline): weighted 4PL/5PL standard curves with QC; runs in the browser via WebAssembly.
+- [RecycleRight](https://github.com/Tejas12972/Recyleright): hackathon app that identifies waste from a photo.
+- [Wordle Solver](https://github.com/Tejas12972/Wordle-Solver): Chrome extension.
+
+## Experience
+
+- XalteraMedia, Co-Founder (Jan 2024–present)
+- CodeWiz, Programming & Robotics Coach (Feb–Jul 2025): coached an FLL team to the Massachusetts state title
+- ABRIS.IO, Software Engineering Intern (Jun 2022–Aug 2023)
