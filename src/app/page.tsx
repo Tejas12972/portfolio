@@ -9,7 +9,7 @@ import { LumenChapter, LumenRepoCard } from "@/components/chapters/lumen"
 import { PhoneBoxChapter } from "@/components/chapters/phonebox"
 import { ShoreClearChapter } from "@/components/chapters/shoreclear"
 import { SkillsChapter } from "@/components/chapters/skills"
-import { TimelineChapter } from "@/components/chapters/timeline"
+import { ExperienceChapter } from "@/components/chapters/experience"
 import { ChapterRail } from "@/components/chapter-progress"
 import { ResumeDrawer } from "@/components/resume"
 import { SiteFooter } from "@/components/site-footer"
@@ -32,7 +32,7 @@ export default function Home() {
       <SiteHeader />
       <ChapterRail />
       <main className="max-w-screen overflow-x-clip px-2">
-        <div className="mx-auto md:max-w-3xl">
+        <div className="mx-auto md:max-w-3xl lg:max-w-6xl">
           <Intro />
           <PhoneBoxChapter />
           <ShoreClearChapter />
@@ -45,7 +45,7 @@ export default function Home() {
           />
           <DataMarketsChapter />
           <EarlierChapter />
-          <TimelineChapter />
+          <ExperienceChapter />
           <SkillsChapter />
           <BeyondChapter />
           <ContactChapter />

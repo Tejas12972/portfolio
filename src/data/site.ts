@@ -19,7 +19,7 @@ export const site = {
     graduation: "Expected May 2029",
     url: "https://www.northeastern.edu",
   },
-  // Fallback "now" for the timeline before the browser supplies the real date.
+  // Year shown in the footer copyright.
   asOf: "2026-10",
   availability: {
     label: "Open to co-op Jan–Aug 2027",
@@ -38,10 +38,12 @@ export const site = {
     postEmbedUrl: undefined as string | undefined,
   },
   resume: {
-    // Drop a phone-free export at public/resume.pdf and set this to true.
-    available: false,
+    // Phone-free export at public/resume.pdf; set false to hide the resume.
+    available: true,
     path: "/resume.pdf",
     downloadName: "Karthik-Basavarajappa-Resume.pdf",
+    // Rendered from the PDF for the drawer: python3 -c "import pymupdf; ..." (see README).
+    preview: { src: "/resume-preview.webp", width: 1600, height: 2071 },
   },
 } as const
 

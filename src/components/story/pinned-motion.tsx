@@ -22,15 +22,20 @@ export function Pinned({ label, steps, stage, className }: PinnedSceneProps) {
   })
 
   return (
-    <div ref={ref} className={cn("relative", className)} aria-label={label}>
-      <div className="sticky top-(--header-height) z-10 border-b bg-background">
-        {stage({ index, progress: scrollYProgress })}
+    <div
+      ref={ref}
+      className={cn("relative lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]", className)}
+      aria-label={label}
+    >
+      {/* Under lg the stage sits on top and captions pass beneath it; from lg it is a sticky left column. */}
+      <div className="sticky top-(--header-height) z-10 border-b bg-background lg:flex lg:h-[calc(100vh-var(--header-height))] lg:items-center lg:self-start lg:border-r lg:border-b-0">
+        <div className="w-full">{stage({ index, progress: scrollYProgress })}</div>
       </div>
       <ol className="relative">
         {steps.map((step, i) => (
           <li
             key={step.id}
-            className="flex min-h-[46vh] items-start px-4 pt-10 pb-6"
+            className="flex min-h-[46vh] items-start px-4 pt-10 pb-6 lg:min-h-[75vh] lg:items-center lg:px-6 lg:py-10"
             aria-current={i === index ? "step" : undefined}
           >
             <div

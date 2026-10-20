@@ -1,5 +1,5 @@
 import { leadership } from "@/data/leadership"
-import { formatPeriod } from "@/lib/timeline"
+import { formatPeriod } from "@/lib/dates"
 
 import { Chapter } from "../story/chapter"
 

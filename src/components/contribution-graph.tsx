@@ -20,12 +20,10 @@ export function ContributionGraph({ weeks, total }: { weeks: ContributionDay[][]
     <figure className="flex flex-col gap-2">
       <div className="overflow-x-auto" tabIndex={0} aria-label="Contribution graph, scrolls sideways">
         <svg
-          width={width}
-          height={height}
           viewBox={`0 0 ${width} ${height}`}
+          className="block h-auto w-full min-w-[640px]"
           role="img"
           aria-label={`${total ?? 0} GitHub contributions in the last year`}
-          className="block"
         >
           {weeks.map((week, wi) =>
             week.map((d) => (

@@ -15,6 +15,8 @@ type Props = {
   /** Wrap the stage image, e.g. in a browser frame. */
   frame?: (image: React.ReactNode, index: number) => React.ReactNode
   stackedLead?: React.ReactNode
+  /** Portrait-friendly stage on wide screens (mostly phone photos). */
+  tall?: boolean
 }
 
 function mediaFor(media: (Media | undefined)[], index: number) {
@@ -23,7 +25,7 @@ function mediaFor(media: (Media | undefined)[], index: number) {
 }
 
 /** A pinned stage that crossfades to each step's image as you scroll. */
-export function PhotoScene({ label, steps, media, frame, stackedLead }: Props) {
+export function PhotoScene({ label, steps, media, frame, stackedLead, tall = false }: Props) {
   return (
     <PinnedScene
       label={label}
@@ -33,7 +35,9 @@ export function PhotoScene({ label, steps, media, frame, stackedLead }: Props) {
         // Every step's image sits in the stage; only the current one is opaque.
         const images = media.filter((m, i): m is Media => !!m && media.indexOf(m) === i)
         const image = (
-          <div className="relative aspect-[16/10] max-h-[52vh] w-full overflow-hidden bg-muted">
+          <div
+            className={`relative aspect-[16/10] max-h-[52vh] w-full overflow-hidden bg-muted lg:max-h-[78vh] ${tall ? "lg:aspect-[4/5]" : ""}`}
+          >
             {images.map((m) => (
               <div
                 key={m.src}

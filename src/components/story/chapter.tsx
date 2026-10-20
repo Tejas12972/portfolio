@@ -21,14 +21,22 @@ export function Chapter({ id, number, title, kicker, lead, meta, children, class
     <>
       <div className="stripe-divider border-x" aria-hidden />
       <Panel id={id} aria-labelledby={headingId} data-chapter={id} className={cn(className)}>
-        <PanelHeader className="py-4">
-          <p className="mono-label mb-1">
-            {String(number).padStart(2, "0")}
-            {kicker ? ` · ${kicker}` : null}
-          </p>
-          <PanelTitle id={headingId}>{title}</PanelTitle>
-          {lead && <div className="mt-2 max-w-prose text-[15px]/relaxed text-muted-foreground">{lead}</div>}
-          {meta && <div className="mt-3">{meta}</div>}
+        <PanelHeader className="py-4 lg:flex lg:items-end lg:justify-between lg:gap-10 lg:py-6">
+          <div>
+            <p className="mono-label mb-1">
+              {String(number).padStart(2, "0")}
+              {kicker ? ` · ${kicker}` : null}
+            </p>
+            <PanelTitle id={headingId} className="lg:text-4xl">
+              {title}
+            </PanelTitle>
+            {lead && (
+              <div className="mt-2 max-w-2xl text-[15px]/relaxed text-muted-foreground lg:text-base/relaxed">
+                {lead}
+              </div>
+            )}
+          </div>
+          {meta && <div className="mt-3 shrink-0 lg:mt-0 lg:text-right [&_ul]:lg:justify-end">{meta}</div>}
         </PanelHeader>
         {children}
       </Panel>

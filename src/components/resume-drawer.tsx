@@ -1,7 +1,8 @@
 "use client"
 
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
-import { DownloadIcon, XIcon } from "lucide-react"
+import Image from "next/image"
+import { DownloadIcon, ExternalLinkIcon, XIcon } from "lucide-react"
 
 import { site } from "@/data/site"
 import { cn } from "@/lib/utils"
@@ -23,6 +24,17 @@ export function ResumeDialog({ open, setOpen }: { open: boolean; setOpen: (open:
           <div className="flex items-center gap-2 border-b px-4 py-3">
             <DialogPrimitive.Title className="mr-auto text-base font-semibold">Resume</DialogPrimitive.Title>
             {site.resume.available && (
+              <a
+                href={site.resume.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonVariants({ size: "sm", variant: "outline" })}
+              >
+                <ExternalLinkIcon aria-hidden />
+                Open PDF
+              </a>
+            )}
+            {site.resume.available && (
               <a href={site.resume.path} download={site.resume.downloadName} className={buttonVariants({ size: "sm" })}>
                 <DownloadIcon aria-hidden />
                 Download PDF
@@ -36,11 +48,17 @@ export function ResumeDialog({ open, setOpen }: { open: boolean; setOpen: (open:
             Karthik (Tejas) Basavarajappa&apos;s resume as a PDF.
           </DialogPrimitive.Description>
           {site.resume.available ? (
-            <iframe
-              src={`${site.resume.path}#view=FitH`}
-              title="Resume PDF"
-              className="min-h-0 w-full flex-1 bg-muted"
-            />
+            // An image, not an embedded PDF: phones and some browsers won't render a PDF inside a page.
+            <div className="min-h-0 flex-1 overflow-y-auto bg-muted p-4">
+              <Image
+                src={site.resume.preview.src}
+                width={site.resume.preview.width}
+                height={site.resume.preview.height}
+                alt="Karthik (Tejas) Basavarajappa's one-page resume: education, technical skills, work experience, projects, and leadership."
+                sizes="(min-width: 768px) 720px, 100vw"
+                className="mx-auto h-auto w-full max-w-[720px] rounded-md border bg-white shadow-sm"
+              />
+            </div>
           ) : (
             <div className="flex flex-1 flex-col items-center justify-center gap-2 p-8 text-center">
               <p className="font-medium">The resume PDF is on its way.</p>

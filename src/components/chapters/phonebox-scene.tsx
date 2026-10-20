@@ -17,7 +17,7 @@ export function PhoneBoxScene() {
           <PhoneBoxDiagram
             lit={steps[index].lights}
             showOldSupply={steps[index].id === "servo"}
-            className="max-h-[calc(52vh)]"
+            className="max-h-[52vh] lg:max-h-[78vh]"
           />
         </div>
       )}

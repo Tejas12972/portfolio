@@ -27,7 +27,7 @@ export function ElisaDemo() {
     )
   }
   return (
-    <div className="overflow-hidden rounded-lg border">
+    <div className="overflow-hidden rounded-lg border lg:col-span-full">
       <iframe
         src={APP_URL}
         title="ELISA Analysis Pipeline live demo"

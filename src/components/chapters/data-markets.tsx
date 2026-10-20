@@ -62,18 +62,24 @@ export function DataMarketsChapter() {
           <p className="text-[15px]/relaxed">{elisa.summary}</p>
           <ProjectMeta project={elisa} />
         </div>
-        <div className="rounded-lg border p-3">
-          <ElisaChart />
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
+          <div className="rounded-lg border p-3">
+            <ElisaChart />
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[14px]/relaxed text-muted-foreground">
+              This is plate 1 of a public 110-mouse IL-6 study. The authors calibrated with a straight line, which reads
+              their own standards back at 99–134% of nominal, worst at the low end where most samples sit. The
+              pipeline&apos;s weighted 4PL reads the same standards at 94–102%. Across all four plates, the straight
+              lines range 28–142%.
+            </p>
+            <Points points={elisa.points} />
+          </div>
         </div>
-        <p className="text-[14px]/relaxed text-muted-foreground">
-          This is plate 1 of a public 110-mouse IL-6 study. The authors calibrated with a straight line, which reads
-          their own standards back at 99–134% of nominal, worst at the low end where most samples sit. The
-          pipeline&apos;s weighted 4PL reads the same standards at 94–102%. Across all four plates, the straight lines
-          range 28–142%.
-        </p>
-        <Points points={elisa.points} />
-        <ElisaDemo />
-        <Figure media={elisaMedia} caption="The app running in the browser, no server." />
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-start">
+          <ElisaDemo />
+          <Figure media={elisaMedia} caption="The app running in the browser, no server." />
+        </div>
         <SkillTags skills={elisa.skills} />
       </article>
     </Chapter>

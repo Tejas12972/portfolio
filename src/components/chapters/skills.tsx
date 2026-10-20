@@ -13,7 +13,7 @@ async function GitHubPanel() {
   return (
     <div className="grid gap-4">
       {gh.live && gh.weeks.length > 0 && <ContributionGraph weeks={gh.weeks} total={gh.totalContributions} />}
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {gh.repos.map((r) => (
           <li key={r.nameWithOwner}>
             <RepoCard repo={r} live={gh.live} />
@@ -26,7 +26,7 @@ async function GitHubPanel() {
 
 function GitHubSkeleton() {
   return (
-    <div className="grid gap-3 sm:grid-cols-2" aria-hidden>
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-hidden>
       {Array.from({ length: 6 }, (_, i) => (
         <div key={i} className="h-24 rounded-lg border bg-muted/40" />
       ))}

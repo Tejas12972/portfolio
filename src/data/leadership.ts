@@ -5,8 +5,6 @@ export type Activity = {
   /** "YYYY-MM" or "YYYY". Omit `end` if ongoing. */
   start: string
   end?: string
-  /** Timeline channel label. Omit to keep it off the timeline. */
-  channel?: string
   body: string
 }
 
@@ -17,7 +15,6 @@ export const leadership: Activity[] = [
     title: "Eagle Scout",
     start: "2016",
     end: "2025",
-    channel: "EAGLE",
     body: "Led my Eagle project: a raised-bed garden for the Village Food Hub food pantry.",
   },
   {
@@ -33,7 +30,6 @@ export const leadership: Activity[] = [
     org: "Chinmaya Mission Boston",
     title: "Sanskrit teacher",
     start: "2022",
-    channel: "TEACHING",
     body: "Teach weekly Sanskrit lessons to 10+ students, with a curriculum and materials I built myself.",
   },
 ]

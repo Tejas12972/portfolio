@@ -26,13 +26,13 @@ the identity is different: our own monogram, accent color, and footer.
 
 ## Layout
 
-A single centered column (`max-w-3xl`, `border-x`) with full-bleed hairlines
+A single centered column (`max-w-3xl`, widening to `max-w-6xl` from 1024 px, `border-x`) with full-bleed hairlines
 between panels and diagonal-stripe dividers between chapters. Geist Sans for
 text, Geist Mono for labels, data, and anything that reads like a datasheet.
 Light and dark themes, both defined as tokens; the toggle rotates a half-filled
 circle.
 
-A slim chapter rail (left edge on desktop, top bar on phones) shows the chapter
+A slim chapter rail (left of the column from 1536 px, a top strip below that) shows the chapter
 names and how far through the page you are.
 
 ## Motion rules
@@ -41,7 +41,7 @@ names and how far through the page you are.
   the visitor scrolls, hovers, or clicks. No looping idle animations.
 - Each chapter gets one scroll-linked idea. No generic fade-up on every block.
 - Native scrolling only: no scroll-jacking, no snapping, no Lenis. Pinned scenes
-  are `position: sticky` stages inside tall sections, so anchor links and ⌘K
+  are `position: sticky` stages (a left column from 1024 px) inside tall sections, so anchor links and ⌘K
   jumps land normally.
 - Only `transform`, `opacity`, and SVG `pathLength` animate.
 - `prefers-reduced-motion`, or a viewport under 768 px: the same content as
@@ -52,13 +52,13 @@ names and how far through the page you are.
 
 | # | Chapter | Scroll-linked idea |
 | --- | --- | --- |
-| 1 | Intro | The load sequence: name, one line, availability badge, then Resume / Email / GitHub / LinkedIn. |
+| 1 | Intro | The load sequence: name, one line, availability badge, then Resume / Email / GitHub / LinkedIn. A featured-builds panel sits beside it on wide screens. |
 | 2 | Phone Box | Pinned system diagram: ESP32-S3 in the middle; touch and fuel gauge on I²C, servo on PWM, LiPo rail with bulk cap, BLE out to the app and Firebase. Each step lights its traces and tells that part, including the servo brownout. |
 | 3 | ShoreClear | Pinned photo stage that crossfades through problem → CAD → fabrication → drive electronics → what I did. |
 | 4 | Lumen | Pinned browser frame whose screenshot swaps per step: agent, model options, MCP server, tabs. Live repo card. |
 | 5 | Data & markets | Options: interactive Black-Scholes widget (sliders → price and greeks), labeled as an illustration. ELISA: the study's straight-line fit bends into the 4PL as you scroll, on the real plate-1 standards; live demo loads only on click. |
 | 6 | Earlier builds | Compact cards; the Wordle demo plays only while visible. |
-| 7 | Timeline | Logic-analyzer view: each role is a channel, high while active, on one 2022–2027 axis. Traces draw in on scroll; the last channel is a dashed, still-open co-op pulse over Jan–Aug 2027. A plain list sits beside it. |
+| 7 | Experience | Plain rows: role, dates, and tags on the left, what I did on the right. Static. |
 | 8 | Skills & GitHub | Hover or tap a skill and the projects that use it light up. Live contribution graph and repo cards. |
 | 9 | Beyond code | Eagle Scout, FLL state title, teaching. A static panel. |
 | 10 | Contact | Email with copy button, LinkedIn, GitHub, resume, vCard. |

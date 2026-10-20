@@ -35,8 +35,8 @@ export function ChapterProgress() {
   const current = chapters[index]
 
   return (
-    <div className="relative mx-auto h-6 md:max-w-3xl xl:h-0">
-      <div className="flex h-full items-center justify-between border-x px-3 font-mono text-[11px] text-muted-foreground xl:hidden">
+    <div className="relative mx-auto h-6 md:max-w-3xl lg:max-w-6xl min-[96rem]:h-0">
+      <div className="flex h-full items-center justify-between border-x px-3 font-mono text-[11px] text-muted-foreground min-[96rem]:hidden">
         <span aria-live="polite">
           {String(index + 1).padStart(2, "0")} · {current?.label}
         </span>
@@ -54,7 +54,7 @@ export function ChapterRail() {
   return (
     <nav
       aria-label="Chapters"
-      className="fixed top-1/2 left-[max(1rem,calc(50%-24rem-13rem))] hidden -translate-y-1/2 xl:block"
+      className="fixed top-1/2 left-[max(1rem,calc(50%-36rem-12.5rem))] hidden -translate-y-1/2 min-[96rem]:block"
     >
       <ol className="grid gap-1.5 border-l pl-3">
         {chapters.map((c, i) => (

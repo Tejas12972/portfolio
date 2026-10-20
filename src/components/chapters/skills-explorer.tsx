@@ -94,7 +94,7 @@ export function SkillsExplorer() {
             "Hover or tap a skill to see where I've used it."
           )}
         </p>
-        <ul className="grid sm:grid-cols-2">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
           {USES.map((u) => {
             const match = current ? u.skills.includes(current) : false
             return (

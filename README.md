@@ -60,9 +60,13 @@ need to touch components to update the site.
 ### Swap the resume
 
 1. Export a PDF **without your phone number** and save it as `public/resume.pdf`.
-2. In `src/data/site.ts`, set `resume.available` to `true`.
+2. Regenerate the drawer preview image (phones can't show a PDF inside a page):
+   ```bash
+   python3 -c "import pymupdf; from PIL import Image; pymupdf.open('public/resume.pdf')[0].get_pixmap(dpi=200).save('/tmp/r.png'); im=Image.open('/tmp/r.png').convert('RGB'); im.thumbnail((1600,2400)); im.save('public/resume-preview.webp', quality=82); print(im.size)"
+   ```
+   and put the printed size in `resume.preview` in `src/data/site.ts`.
 
-The drawer, the download button, and the ⌘K entry switch on automatically.
+`resume.available: false` hides the drawer's download buttons and the ⌘K entry.
 
 ## Environment variables
 
